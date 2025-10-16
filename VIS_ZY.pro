@@ -9,24 +9,38 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cameramanager.cpp \
+    camerause.cpp \
+    hkcamera.cpp \
+    imageprocess.cpp \
     imageview.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    cameramanager.h \
+    camerause.h \
+    hkcamera.h \
+    imageprocess.h \
     imageview.h \
     mainwindow.h
 
 FORMS += \
     mainwindow.ui
 
-INCLUDEPATH += D:/alllib/opencv/build/include
+INCLUDEPATH += D:/alllib/opencv/build/include \
+               "C:/Program Files (x86)/MVS/Development/Includes"
+
 LIBS += -L"D:/alllib/opencv/build/x64/vc16/lib"
 CONFIG(debug, debug|release) {
     LIBS += -lopencv_world4110d
 } else {
     LIBS += -lopencv_world4110
 }
+
+LIBS += -L"C:/Program Files (x86)/MVS/Development/Libraries/win64" \
+        -lMvCameraControl
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

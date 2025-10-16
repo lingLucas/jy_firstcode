@@ -7,6 +7,9 @@
 #include <QTimer>
 
 #include "imageview.h"
+#include "hkcamera.h"
+#include "camerause.h"
+#include "cameramanager.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,9 +23,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void initUi();
+    void cleanVideoEvent();
+    void cleanCameraEvent();
+    void cleanEvents();
     void displayOpenCVImage(const cv::Mat &image);
-
-
 
 private slots:
     void on_pushButton_opencam_clicked();
@@ -39,6 +44,23 @@ private slots:
 
     void logMessageOutput(const QString &msg);
 
+    void on_pushButton_exit_clicked();
+
+
+    void on_pushButton_getvalue_clicked();
+
+    void on_pushButton_setvalue_clicked();
+
+    void handleActionConnect();
+
+    void handleActionDisconnect();
+
+    void handleActionFind();
+
+    void onSearchFinished(int deviceCount);
+
+    void updateTimeDisplay(); // 更新时间的槽函数
+
 private:
     Ui::MainWindow *ui;
 
@@ -51,6 +73,19 @@ private:
     ImageView *imageView = nullptr;
 
     QThread *workerThread = nullptr;
+
+    MV_CC_DEVICE_INFO_LIST  m_stDevList;
+
+    HKCamera *hkCamera = nullptr;
+
+    QThread *cameraThread = nullptr;
+
+    CameraUse *cameraUse = nullptr;
+
+    CameraManager *cameraManager = nullptr;
+
+    bool is_init_camera;
+    bool isconnect_camera;
 
 };
 #endif // MAINWINDOW_H

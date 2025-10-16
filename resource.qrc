@@ -10,5 +10,6 @@
         <file>icons/open_picture.png</file>
         <file>icons/open_video.png</file>
         <file>icons/save_img.png</file>
+        <file>icons/find.png</file>
     </qresource>
 </RCC>

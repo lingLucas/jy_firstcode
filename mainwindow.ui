@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+   <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -72,7 +72,7 @@
       <x>660</x>
       <y>30</y>
       <width>281</width>
-      <height>101</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -95,7 +95,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>91</width>
+       <width>101</width>
        <height>21</height>
       </rect>
      </property>
@@ -108,7 +108,7 @@
      <property name="font">
       <font>
        <family>Microsoft YaHei UI</family>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
       </font>
      </property>
      <property name="layoutDirection">
@@ -124,9 +124,9 @@
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>130</x>
        <y>10</y>
-       <width>71</width>
+       <width>141</width>
        <height>21</height>
       </rect>
      </property>
@@ -158,7 +158,7 @@ color: rgb(255, 255, 255);</string>
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>91</width>
+       <width>101</width>
        <height>21</height>
       </rect>
      </property>
@@ -170,7 +170,7 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
       </font>
      </property>
      <property name="layoutDirection">
@@ -183,12 +183,12 @@ color: rgb(255, 255, 255);</string>
       <string>当前运行时间：</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_7">
+    <widget class="QLabel" name="label_time">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>130</x>
        <y>40</y>
-       <width>71</width>
+       <width>141</width>
        <height>21</height>
       </rect>
      </property>
@@ -205,10 +205,10 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(170, 163, 167);
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 0, 0);</string>
      </property>
      <property name="text">
-      <string>19h30m</string>
+      <string/>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -219,7 +219,7 @@ color: rgb(255, 255, 255);</string>
       <rect>
        <x>10</x>
        <y>70</y>
-       <width>91</width>
+       <width>111</width>
        <height>21</height>
       </rect>
      </property>
@@ -231,7 +231,7 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
       </font>
      </property>
      <property name="layoutDirection">
@@ -241,18 +241,18 @@ color: rgb(255, 255, 255);</string>
       <string notr="true">color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
-      <string>已检测棒管数量：</string>
+      <string>已检测数量：</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="label_9">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>130</x>
        <y>70</y>
-       <width>71</width>
+       <width>141</width>
        <height>21</height>
       </rect>
      </property>
@@ -333,7 +333,7 @@ color: rgb(255, 255, 255);</string>
       <x>660</x>
       <y>150</y>
       <width>281</width>
-      <height>411</height>
+      <height>221</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -445,6 +445,182 @@ color: rgb(255, 255, 255);</string>
      </layout>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>390</y>
+      <width>281</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>相机参数</string>
+    </property>
+    <widget class="QPushButton" name="pushButton_getvalue">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(247, 247, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>获取参数</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_setvalue">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>120</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(247, 247, 255);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>设置参数</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_exporetime">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>30</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>          曝光</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_agin">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>60</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>          增益</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_framerate">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>90</y>
+       <width>121</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>          帧率</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_exporetime">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>30</y>
+       <width>121</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_gain">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>60</y>
+       <width>121</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_framerate">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>90</y>
+       <width>121</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -493,6 +669,7 @@ color: rgb(255, 255, 255);</string>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionFind"/>
    <addaction name="actionConnect"/>
    <addaction name="actionDisconnect"/>
    <addaction name="actionStart"/>
@@ -505,10 +682,10 @@ color: rgb(255, 255, 255);</string>
      <normaloff>:/images/icons/connect.png</normaloff>:/images/icons/connect.png</iconset>
    </property>
    <property name="text">
-    <string>连接</string>
+    <string>连接设备</string>
    </property>
    <property name="toolTip">
-    <string>连接</string>
+    <string>连接设备</string>
    </property>
    <property name="font">
     <font/>
@@ -520,10 +697,10 @@ color: rgb(255, 255, 255);</string>
      <normaloff>:/images/icons/disconnect.png</normaloff>:/images/icons/disconnect.png</iconset>
    </property>
    <property name="text">
-    <string>断连</string>
+    <string>断开连接</string>
    </property>
    <property name="toolTip">
-    <string>断连</string>
+    <string>断开连接</string>
    </property>
   </action>
   <action name="actionStart">
@@ -548,6 +725,18 @@ color: rgb(255, 255, 255);</string>
    </property>
    <property name="toolTip">
     <string>关闭</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/icons/find.png</normaloff>:/images/icons/find.png</iconset>
+   </property>
+   <property name="text">
+    <string>查找设备</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::TextHeuristicRole</enum>
    </property>
   </action>
  </widget>

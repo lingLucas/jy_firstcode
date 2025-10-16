@@ -5,6 +5,7 @@
 #include <QImage>
 #include <QDebug>
 #include <QThread>
+#include "imageprocess.h"
 
 using namespace cv;
 
@@ -17,8 +18,7 @@ public:
 
     void setPath(const QString &path);
 
-    Mat QImageToCvMat(const QImage &image, bool cloneImageData = true);
-    QImage MatToQImage(const Mat& mat);
+
 
 public slots:
     void processImage();  // 按钮触发的槽函数
