@@ -59,6 +59,7 @@ void ImageView::processVideo()
         QImage img = ImageProcess::MatToQImage(frame);
         emit sendImage(img);
         QString msg = QString("frame=%1 ,检测到缺陷数量%2").arg(frameCount).arg(20);
+        qDebug()<<msg;
         emit logMessage(msg);
 
         QThread::msleep(30); // 控制播放速度 (约33ms对应30FPS)

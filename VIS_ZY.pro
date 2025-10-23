@@ -14,6 +14,8 @@ SOURCES += \
     hkcamera.cpp \
     imageprocess.cpp \
     imageview.cpp \
+    loggerfunc.cpp \
+    loggerworker.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -23,13 +25,15 @@ HEADERS += \
     hkcamera.h \
     imageprocess.h \
     imageview.h \
+    loggerfunc.h \
+    loggerworker.h \
     mainwindow.h
 
 FORMS += \
     mainwindow.ui
 
 INCLUDEPATH += D:/alllib/opencv/build/include \
-               "C:/Program Files (x86)/MVS/Development/Includes"
+               "D:/soft/MVS/MVS/Development/Includes"
 
 LIBS += -L"D:/alllib/opencv/build/x64/vc16/lib"
 CONFIG(debug, debug|release) {
@@ -38,7 +42,7 @@ CONFIG(debug, debug|release) {
     LIBS += -lopencv_world4110
 }
 
-LIBS += -L"C:/Program Files (x86)/MVS/Development/Libraries/win64" \
+LIBS += -L"D:/soft/MVS/MVS/Development/Libraries/win64" \
         -lMvCameraControl
 
 

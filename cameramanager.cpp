@@ -34,10 +34,11 @@ void CameraManager::findCamDevice(MV_CC_DEVICE_INFO_LIST* m_stDevList)
                                          MV_GENTL_CXP_DEVICE | MV_GENTL_XOF_DEVICE ,m_stDevList);
     if (MV_OK != nRet)
     {
+        qDebug()<<"EnumDevices failed!!!";
         return;
     }
     if (m_stDevList->nDeviceNum){
-        // qDebug()<<"camera num: "<<m_stDevList->nDeviceNum;
+        qDebug()<<"camera num: "<<m_stDevList->nDeviceNum;
         emit logMessage(QString("find camera num: %1").arg(m_stDevList->nDeviceNum));
         for (unsigned int i = 0; i < m_stDevList->nDeviceNum; i++)
         {
@@ -45,6 +46,8 @@ void CameraManager::findCamDevice(MV_CC_DEVICE_INFO_LIST* m_stDevList)
             if (NULL == pDeviceInfo)
             {
                 qDebug()<<"camera num:" <<i<<"无法获取！！！";
+                QString msg = QString("camera num: %1 无法获取！！！").arg(i);
+                emit logMessage(msg);
                 continue;
             }
             if (pDeviceInfo->nTLayerType == MV_GIGE_DEVICE)
@@ -56,8 +59,6 @@ void CameraManager::findCamDevice(MV_CC_DEVICE_INFO_LIST* m_stDevList)
                 // qDebug() << "CurrentIp:"
                 //          << QString("%1.%2.%3.%4").arg(nIp1).arg(nIp2).arg(nIp3).arg(nIp4);
                 // qDebug()<<"UserDefinedName:" <<pDeviceInfo->SpecialInfo.stGigEInfo.chUserDefinedName;
-
-
                 QString msg = QString("Camera Ip: %1.%2.%3.%4").arg(nIp1).arg(nIp2).arg(nIp3).arg(nIp4);
                 emit logMessage(msg);
             }
@@ -99,7 +100,8 @@ void CameraManager::findCamDevice(MV_CC_DEVICE_INFO_LIST* m_stDevList)
     }
     else
     {
-        printf("Find No Devices!\n");
+        qDebug()<<"Find No Devices!";
+        emit logMessage("Find No Devices!");
         return;
     }
     emit searchFinished(m_stDevList->nDeviceNum);
